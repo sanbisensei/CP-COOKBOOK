@@ -1,33 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//mail_man will rise
+using ll = long long;
+constexpr ll mod = 1e9+7;
 int main(){
-    int t;cin>>t;
+    int t;
+    cin >> t;
     while(t--){
-        int n;
-    cin>>n;
-    int arr[n];
-    bool c = true;
-
-    for (int i=0;i<n;i++)
-    {
-        cin>>arr[i];
-    }
-
-    for(int i=1;i<n;i++){
-        if(arr[i]%2 == arr[i-1]%2){
-            c=false;
+        ll n;cin>>n;
+        vector<ll> a(n);
+        ll sum =0;
+        for(ll i=0;i<n;i++){
+            cin>>a[i];
+            sum+=a[i];
+        } 
+        if(sum%2!=0){
+            cout<<"NO"<<endl;
+        }
+        else{
+            cout<<"YES"<<endl;
         }
     }
-
-    if(c==true){
-        cout<<"YES"<<endl;
-    }
-    else{
-        cout<<"NO"<<endl;
-    }
-
-    }
-    
     return 0;
 }
