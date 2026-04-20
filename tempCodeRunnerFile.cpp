@@ -5,6 +5,6 @@ using ll = long long;
 constexpr ll mod = 1e9+7;
 
 int main(){
-    cout<<123%10;
+    cout<<1%18;
     return 0;
 }
