@@ -5,7 +5,10 @@ using ll = long long;
 constexpr ll mod = 1e9+7;
 
 int main(){
-    int n;cin>>n;
+    int t;
+    cin >> t;
+    while(t--){
+        int n;cin>>n;
     vector<int> arr(n);
     map<int,int> m;
     set<int> s;
@@ -33,6 +36,7 @@ int main(){
     }
     else{
         cout<<ceil(double(size/2))+hablu<<endl;
+    }
     }
     return 0;
 }
