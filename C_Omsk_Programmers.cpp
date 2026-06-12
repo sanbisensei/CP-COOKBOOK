@@ -5,9 +5,25 @@ using ll = long long;
 constexpr ll mod = 1e9+7;
 
 int main(){
-    ll a,b,x;
+    int t;
+    cin >> t;
+    while(t--){
+        ll a,b,x;
     cin>>a>>b>>x;
-    int c=0;
-
+    ll ans = abs(a-b);
+    ll c=0;
+    while(a!=0 || b!=0){
+        if(a>b){
+            a=a/x;
+        }
+        if(b>a){
+            b=b/x;
+        }
+        c++;
+        ans = min(ans, c+abs(a-b));
+        
+    }
+    cout<<ans<<endl;
+    }
     return 0;
 }
