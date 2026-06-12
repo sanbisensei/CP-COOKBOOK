@@ -16,7 +16,7 @@ int main(){
         if(a>b){
             a=a/x;
         }
-        if(b>a){
+        else{
             b=b/x;
         }
         c++;
