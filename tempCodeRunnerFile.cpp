@@ -5,8 +5,8 @@ using ll = long long;
 constexpr ll mod = 1e9+7;
 
 int main(){
-    int s =310-12;
-    cout<<s%12<<endl;
+    int n = 1223;
+    cout<<<<endl;
     
     return 0;
 }
