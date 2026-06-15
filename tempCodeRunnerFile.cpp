@@ -5,8 +5,9 @@ using ll = long long;
 constexpr ll mod = 1e9+7;
 
 int main(){
-    int n = 1223;
-    cout<<<<endl;
+    int n,x,y,z;
+    cin>> n>>x>>y>>z;
+    
     
     return 0;
 }
