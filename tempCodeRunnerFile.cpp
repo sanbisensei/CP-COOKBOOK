@@ -7,7 +7,6 @@ constexpr ll mod = 1e9+7;
 
 
 int main(){
-    string s;cin>>tolower>>s;
-    cout<<char(s[2])<<endl;
+    cout<<2%6<<endl;
     return 0;
 }
