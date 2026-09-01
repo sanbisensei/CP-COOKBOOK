@@ -5,37 +5,38 @@ using ll = long long;
 constexpr ll mod = 1e9+7;
 
 int main(){
-int t;
-cin >> t;
-while(t--){
-            
-        int n;cin>>n;
+
+   int t;
+   cin >> t;
+   while(t--){
+                
+    int n;cin>>n;
     int arr[n];
-    set<int> set;
+    
     for(int i = 0;i<n;i++){
          cin>>arr[i];
-         set.insert(arr[i]);
     }
 
-    int damage=0;
-    
-    unordered_map<int,int> hash;
-    for (int i=1;i<=1000;i++) {
-    hash[i]=0;
-}
+    unordered_map<int,int> freq;
+    int maxFreq=0;
+    int maxNum = arr[0];
     for(int i=0;i<n;i++){
-        if(set.size()==1 && n>1){
-            damage=arr[0]+arr[1];
-            break;
+        freq[arr[i]]++;
+        if(freq[arr[i]]>maxFreq){
+            maxFreq = freq[arr[i]];
+            maxNum = arr[i];
         }
-        if(hash[arr[i]]<=2){
-            damage+=arr[i];
-        }
-        hash[arr[i]]++;
     }
-    cout<<damage<<endl;
-    
-   
-}
+    int other = n - maxFreq;
+    if(other>=maxFreq){
+       int sum = accumulate(arr,arr+n,0);
+       cout<<sum<<endl; 
+    }
+    else{
+        int cut = max(0,(maxFreq-2) - other);
+        int sum = accumulate(arr,arr+n,0);
+        cout<<sum - (maxNum*cut)<<endl;
+    }
+   }
     return 0;
 }
