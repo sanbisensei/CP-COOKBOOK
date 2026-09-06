@@ -8,67 +8,29 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n;cin>>n;
-        vector<int> a(n);
-        for(int i=0;i<n;i++) cin >> a[i];
+        
+    int n;cin>>n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++) cin >> a[i];
 
-        int i=0, j=n-1;
-
-        bool f1=true, f2=true;
-
-        while(i<n && a[i]!=-1){
-            if(a[i]==1){
-                f1=false;
-            }
-            i++;
+    int fidx = -1;
+    int lidx = -1;
+    for(int i=0;i<n;i++){
+        if(a[i]!=0){
+            if(fidx == -1) fidx = i;
+            lidx = i;
         }
+    }
+    
+    if(fidx != -1 && a[fidx] == -1) a[fidx] = 1;
+    if(lidx != -1 && a[lidx]== -1) a[lidx] =1;
 
-        while(j>=0 && a[j]!=-1){
-            if(a[j]==1){
-                f2=false;
-            }
-            j--;
-        }
-
-        if(i<=j){
-            if(f1 && f2){
-                a[i] = 1;
-                a[j] = 1;
-            }
-            else if(!f1 && !f2){
-                a[i] = 0;
-                a[j] = 0;
-            }
-            else if(f1 && !f2){
-                if(i==j){
-                    a[i]=1;
-                }
-                else{
-                    a[i]=1;
-                    a[j]=0;
-                }
-            }
-            else if(!f1 && f2){
-                if(i==j){
-                    a[i]=1;
-                }
-                else{
-                    a[i]=0;
-                    a[j]=1;
-                }
-            }
-
-            for(int k=i+1;k<=j-1;k++){
-
-                if(a[k]==-1){
-                    a[k]=0;
-                }
-            }
-        }
-        for(int x : a){
-            cout<<x<< " ";
-        }
-        cout<<endl;
+    for(auto it : a){
+        if(it == -1) cout << 0 <<" ";
+        else cout<< it <<" ";
+    }
+    cout<< endl;
+        
     }
 
     return 0;
