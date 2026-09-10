@@ -6,7 +6,7 @@ constexpr ll mod = 1e9+7;
 
 int main(){
   
-   cout<<17%2<<endl; 
+   cout<<18%12<<endl; 
     
     return 0;
 }
