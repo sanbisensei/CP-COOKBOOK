@@ -10,5 +10,5 @@ int gcd(int a,int b){
 int main(){
     cout<<"GCD : "<< gcd(18,12)<<endl;
     cout<<"LCM : "<< (18*12)/gcd(18,12)<<endl;
-    return 0; 
+    return 0;  
 }
