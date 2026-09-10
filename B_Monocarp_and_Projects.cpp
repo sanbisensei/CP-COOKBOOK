@@ -1,26 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//mail_man will rise
 using ll = long long;
-
-int main() {
+constexpr ll mod = 1e9+7;
+// mathar upor diye gese
+// brute force easy but math diye kora hard
+int main(){
     int t;
     cin >> t;
+    while(t--){
+        ll x,y,k, ans=0;
+    cin>>x>>y>>k;
+    
+    ll z = y -x;
+    ll last = x+k-1;
+    int c = min(last,z); // eita check kortisi j last value z er che boro kina
 
-    while (t--) {
-        long long x, y, k;
-        cin >> x >> y >> k;
-
-        vector<long long> a(k);
-        vector<long long> prefix(k + 1, 0);
-
-        for (long long i = 0; i < k; i++) {
-            a[i] = (y + i) % (x + i);
-            prefix[i + 1] = prefix[i] + a[i];
-        }
-
-        cout << prefix[k] << endl;
+    for(int i=x;i<=c;i++){
+        ans = ans +(z%i);
     }
-
+    if(last > z){
+        ans+= (last - max(x,z+1)+1)*z;
+    }
+     cout<< ans<< endl;
+    }
     return 0;
 }
