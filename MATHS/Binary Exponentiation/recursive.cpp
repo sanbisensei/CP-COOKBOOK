@@ -6,7 +6,6 @@ constexpr ll mod = 1e9+7;
 
 ll binpow(ll a,ll b){
     if(b==0) return 1;
-    ll res = 1;
     if(b%2 == 0){
         return binpow(a*a,b/2);
     }
