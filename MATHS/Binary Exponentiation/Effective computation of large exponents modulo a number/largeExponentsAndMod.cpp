@@ -34,3 +34,6 @@ int main(){
     cout<<binpow(x,n,m)<<endl;
     return 0;
 }
+
+
+// O(logN)
