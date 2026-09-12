@@ -14,6 +14,10 @@ int main(){
         cout<<"-1"<<endl;
         continue;
     }
+    if(k>(n*2)-1){
+        cout<<"-1"<<endl;
+        continue;
+    }
     vector<vector<int>> v(n, vector<int>(n));
     int x=1;
     for(int i=0;i<n;i++){
@@ -25,10 +29,18 @@ int main(){
         
     }
     
+   
+    int threshold = (n*2)-1;
     for(int i=0;i<n;i++){
-        swap(v[0][i],v[i][i]);
-        
+        if(threshold>=k){
+            swap(v[0][i],v[i][i]);
+            threshold--;
+        }
+        else{
+            break;
+        }
     }
+    
 
     for(int i=0;i<n;i++){
         
