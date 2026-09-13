@@ -8,35 +8,31 @@ int main(){
    int t;
    cin >> t;
    while(t--){
+       
         string s;cin>>s;
-    bool ck=false;
-    ll limit=s.size()/2;
-    for(ll i=0;i<limit;i++){
-        if(s[i]=='(' && s[s.size()-i-1]==')'){
-            ck=true;
+        int n= s.size();
+        bool ck=false;
+        int sum =0;
+        for(int i=1;i<n-1;i++){
+            if(s[i]=='('){
+                sum++;
+            }
+            if(s[i]==')'){
+                sum--;
+            }
+            if(sum<0){
+                ck=true;
+                break;
+            }
         }
-        else{
-            ck=false;
-            break;
-        }
-    }
-    if(s[0]=='(' && s[s.size()-1]==')'){
-        for(ll i=1;i+1<s.size();i=i+2){
-        if(s[i]=='('&&s[i+1]==')'){
-            ck=true;
-        }
-        else{
-            ck=false;
-            break;
-        }
-    }
-    }
-    if(ck){
-        cout<< "NO"<<endl;
+    if(ck==true){
+        cout<<"YES"<<endl;
     }
     else{
-        cout<<"YES"<<endl;
-    }   
+        cout<<"NO"<<endl;
+    }
+      
+   
    }
     return 0;
 }
