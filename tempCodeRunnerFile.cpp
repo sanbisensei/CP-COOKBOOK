@@ -1,5 +1,10 @@
-for(int i=0;i<s.size()-2;i++){
-    //     if(s[i]==' ' && s[i+1]==' ' && s[i+2]==' '){
-    //         s.erase(i,2);
-    //     }
-    // }
+#include <bits/stdc++.h>
+using namespace std;
+//mail_man will rise
+using ll = long long;
+constexpr ll mod = 1e9+7;
+
+int main(){
+    cout<<(5^-1)<<endl;
+    return 0;
+}
