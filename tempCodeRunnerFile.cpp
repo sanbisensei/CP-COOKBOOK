@@ -5,7 +5,8 @@ using ll = long long;
 constexpr ll mod = 1e9+7;
 
 int main(){
-    cout<<(1^3^4^4)<<endl;
-    cout<<(1+3+4+4)/4<<endl;
+cout<<12%3<<endl;
+
+
     return 0;
 }
