@@ -7,30 +7,37 @@ constexpr ll mod = 1e9+7;
 int main(){
     int n;cin>>n;
     vector<int> v(n);
-    for(int i=0;i<n;i++){
-        cin>>v[i];
+    for(int i=0;i<n;i++) cin>>v[i];
+    
+
+    if(n==1){
+        cout<<v[0]<<endl;
     }
-    int counter = n*2;
-    vector<int> ans;
-    for(int i=0;i<n-1;i++){
-        if(v[i]<v[i+1]){
-            if(v[i]%2==0 && v[i+1]%2==0){
-                ans.push_back(v[i]+1);
-            }
-            if(v[i]%2!=0 && v[i+1]%2!=0){
-                ans.push_back(v[i]+1);
-            }
-            else{
-                ans.push_back(v[i]);
+    // v[i+1] eikhane v[i]
+    // v[i] eikhane v[i-1]
+
+    for(int i=1;i<n;i++){
+        if(v[i-1]==1){
+            v[i-1]=v[i-1]+1;
+        }
+        if(v[i]<v[i-1]){
+            continue;
+        }
+        if(v[i]==v[i-1]){
+            v[i]=v[i]+2;
+            v[i-1]=v[i-1]+1;
+        }
+        else if(v[i]%v[i-1]==0 && v[i]>v[i-1]){
+            v[i]=v[i]+1;
+            if(v[i-1]==1){
+                v[i-1]=v[i-1]+1;
             }
         }
-        else{
-            ans.push_back(v[i]);
-        }
+        
     }
+    
 
-
-    for(int x: ans){
+    for(int x: v){
         cout<< x<< " ";
     }
     cout<<endl;
