@@ -1,2 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+//mail_man will rise
+using ll = long long;
+constexpr ll mod = 1e9+7;
 
-    int i=0;
+int main(){
+    cout<<3%5<<endl;
+    return 0;
+}
