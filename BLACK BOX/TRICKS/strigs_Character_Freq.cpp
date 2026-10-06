@@ -9,7 +9,7 @@ int main(){
     
     int sizeT = t.size();
 
-    vector<char> freqOfT(36,0);
+    vector<char> freqOfT(26,0);
 
     for(int i=0;i<sizeT;i++){
         freqOfT[t[i]-'A']++;
