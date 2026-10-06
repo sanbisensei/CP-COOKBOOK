@@ -45,6 +45,7 @@ int main(){
     for(auto q:mp){
         ll count = q.second;
         if(count>1){
+            // nCr korsi eikhane n=count & r=2
             ans+=count*(count-1)/2;
         }
     }
